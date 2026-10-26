@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "profile": "trabajo",
+  "memory": {
+    "mode": "shared"
+  },
+  "switching": {
+    "confirmContextTransfer": true
+  }
+}
