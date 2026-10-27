@@ -1,7 +1,7 @@
 # AGENTS.md · Symposium help site (symposium-ayuda)
 
 Help manual for **Symposium**, the multi-tenant SaaS platform for academic and scientific events
-(registration, payments, papers, websites) run by Digio since 2007. This repository is a static
+(registration, payments, papers, websites) run by Symposium S.L. since 2007. This repository is a static
 [Hugo](https://gohugo.io) site that replaces the old partner-facing DokuWiki
 (`ayuda.symposium.emagister.com` / `demopremium.symposium.events/ayuda-symposium`).
 

@@ -1,4 +1,4 @@
-module github.com/digio/symposium-ayuda
+module github.com/symposium-events/symposium-ayuda
 
 go 1.23.4
 
