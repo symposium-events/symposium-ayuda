@@ -1,0 +1,26 @@
+# UI strings (English). Keys missing here fall back to hextra's i18n/en.yaml.
+# Menu labels are looked up by menu identifier.
+docs: "Manual"
+events: "Events"
+admin: "Administration"
+faq: "FAQ"
+website: "symposium.events"
+
+copyright: "© Symposium · Digio Soluciones Digitales"
+lastUpdated: "Last updated on"
+
+heroEyebrow: "Help center"
+heroTitle: "Everything you need to run your events on Symposium"
+heroLead: "Step-by-step guides for organizers, administrators and attendees: create your event, manage registrations and payments, and configure your institution's platform."
+heroStart: "Start with the manual"
+heroFaq: "Frequently asked questions"
+homeSections: "Manual sections"
+
+pagesCount:
+  one: "{{ .Count }} page"
+  other: "{{ .Count }} pages"
+
+footerTagline: "Symposium is the all-in-one event management platform for academic and scientific events at universities and institutions."
+footerNav: "Footer links"
+whatsNew: "What's new"
+untranslated: "This page has not been translated yet."

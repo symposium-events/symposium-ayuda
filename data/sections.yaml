@@ -1,0 +1,39 @@
+# Top-level manual sections shown on the home page, in order.
+# `path` is relative to the language root; icons come from data/icons.yaml
+# (sym-*) or hextra's heroicons; `accent` is one of the brand colours.
+- path: docs/introduccion
+  icon: sym-support
+  accent: blue
+  text: { es: "Qué es Symposium y qué tipos de usuario existen.", en: "What Symposium is and which user roles exist." }
+- path: docs/eventos
+  icon: sym-calendar
+  accent: orange
+  text: { es: "Crea tu evento, su web, programa, inscripciones y comunicaciones.", en: "Create your event, its website, programme, registrations and communications." }
+- path: docs/administracion
+  icon: sym-design
+  accent: violet
+  text: { es: "Configuración global de la plataforma, usuarios, pagos y diseño.", en: "Platform-wide settings, users, payments and design." }
+- path: docs/gestion-economica
+  icon: sym-payments
+  accent: magenta
+  text: { es: "Receptores de pago, centros de gasto, facturas y estadísticas.", en: "Payment receivers, cost centres, invoices and statistics." }
+- path: docs/panel-de-usuario
+  icon: sym-location
+  accent: blue
+  text: { es: "Tus datos, notificaciones y eventos a los que asistes.", en: "Your details, notifications and the events you attend." }
+- path: docs/uso-de-la-plataforma
+  icon: sym-science
+  accent: flame
+  text: { es: "Busca eventos, inscríbete y envía comunicaciones.", en: "Find events, register and submit papers." }
+- path: docs/apps-moviles
+  icon: device-mobile
+  accent: violet
+  text: { es: "Las apps para asistentes y organizadores.", en: "The attendee and organizer apps." }
+- path: docs/crowdfunding
+  icon: sparkles
+  accent: magenta
+  text: { es: "Proyectos de micromecenazgo: patrocinios y donantes.", en: "Crowdfunding projects: sponsorships and donors." }
+- path: docs/anexos
+  icon: sym-export
+  accent: orange
+  text: { es: "El flujo de inscripción al detalle, eventos de demostración e integraciones.", en: "The registration flow in detail, demo events and integrations." }

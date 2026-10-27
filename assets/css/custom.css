@@ -1,0 +1,18 @@
+/* hextra reads this file (css/custom.css) and bundles it after its own CSS.
+   Only hextra variable overrides belong here. The Symposium design system lives
+   in assets/css/symposium/*.css, loaded from layouts/_partials/custom/head-end.html. */
+
+/* Primary = Symposium orange (#F86A00, hsl 25 100% 49%). Darkened in light mode
+   so links reach WCAG AA contrast on white; the pure brand orange is kept for
+   fills and accents (--sym-orange). */
+:root {
+  --primary-hue: 25deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 38%;
+}
+
+.dark {
+  --primary-hue: 27deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 58%;
+}

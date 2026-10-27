@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{- $lang := site.Language.Lang -}}
+<div class="hx:mx-auto hx:flex hextra-max-page-width">
+  {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+  <main id="content" class="hx:w-full hx:min-w-0 hx:pb-16 hx:pt-6 hx:md:pt-10 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)]">
+
+    <section class="sym-hero">
+      {{ partial "svg/mosaic.html" . }}
+      <span class="sym-hero__eyebrow">{{ T "heroEyebrow" }}</span>
+      <h1 class="sym-hero__title">{{ T "heroTitle" }}</h1>
+      <p class="sym-hero__lead">{{ T "heroLead" }}</p>
+      <div class="sym-hero__actions">
+        <a class="sym-btn sym-btn--light" href="{{ "docs" | relLangURL }}">
+          {{ T "heroStart" }} {{ partial "utils/icon.html" (dict "name" "arrow-right" "attributes" `height="1.1em" aria-hidden="true"`) }}
+        </a>
+        <a class="sym-btn sym-btn--ghost" href="{{ "docs/faq" | relLangURL }}">{{ T "heroFaq" }}</a>
+      </div>
+    </section>
+
+    <h2 class="sym-section-title">{{ T "homeSections" }}</h2>
+    <div class="sym-grid">
+      {{- range hugo.Data.sections }}
+        {{- $s := . }}
+        {{- with site.GetPage .path }}
+        <a class="sym-tile sym-accent-{{ $s.accent }}" href="{{ .RelPermalink }}">
+          <span class="sym-tile__icon">{{ partial "utils/icon.html" (dict "name" $s.icon "attributes" `aria-hidden="true"`) }}</span>
+          <span class="sym-tile__title">{{ .LinkTitle }}</span>
+          <span class="sym-tile__text">{{ index $s.text $lang }}</span>
+          <span class="sym-tile__count">{{ T "pagesCount" (len .RegularPagesRecursive) }}</span>
+        </a>
+        {{- end }}
+      {{- end }}
+    </div>
+
+    {{ with .Content }}<div class="content hx:mt-12">{{ . }}</div>{{ end }}
+  </main>
+</div>
+{{ end }}

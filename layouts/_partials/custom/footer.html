@@ -1,0 +1,16 @@
+{{- /* Brand footer. Strings in i18n/*.yaml. */ -}}
+<div class="hx:flex hx:flex-col hx:gap-6 hx:py-10 hx:md:flex-row hx:md:items-start hx:md:justify-between">
+  <div class="hx:flex hx:flex-col hx:gap-3 hx:max-w-md">
+    <a href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }}">
+      <img class="hx:block hx:dark:hidden" src="{{ "images/brand/symposium-logo.svg" | relURL }}" alt="Symposium" width="157" height="30" />
+      <img class="hx:hidden hx:dark:block" src="{{ "images/brand/symposium-logo-dark.svg" | relURL }}" alt="Symposium" width="157" height="30" />
+    </a>
+    <p class="hx:text-sm">{{ T "footerTagline" }}</p>
+  </div>
+  <nav class="hx:flex hx:flex-wrap hx:gap-x-8 hx:gap-y-2 hx:text-sm" aria-label="{{ T "footerNav" }}">
+    <a class="hx:hover:underline" href="{{ "docs" | relLangURL }}">{{ T "docs" }}</a>
+    <a class="hx:hover:underline" href="{{ "docs/faq" | relLangURL }}">FAQ</a>
+    <a class="hx:hover:underline" href="{{ "docs/novedades" | relLangURL }}">{{ T "whatsNew" }}</a>
+    <a class="hx:hover:underline" href="https://symposium.events" target="_blank" rel="noopener">symposium.events</a>
+  </nav>
+</div>

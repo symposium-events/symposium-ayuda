@@ -1,0 +1,19 @@
+{{- /* Lists the child sections and pages of the current section as tiles.
+       Used by every generated _index.md: {{< section-cards >}} */ -}}
+{{- $accents := slice "orange" "magenta" "violet" "blue" "flame" -}}
+{{- $items := .Page.Pages.ByWeight -}}
+{{- with $items }}
+<div class="sym-grid sym-cards not-prose">
+  {{- range $i, $p := . }}
+  {{- $accent := index $accents (mod $i (len $accents)) }}
+  <a class="sym-tile sym-accent-{{ $accent }}" href="{{ $p.RelPermalink }}">
+    <span class="sym-tile__title">{{ $p.LinkTitle }}</span>
+    {{- if $p.IsSection }}
+    <span class="sym-tile__count">{{ T "pagesCount" (len $p.RegularPagesRecursive) }}</span>
+    {{- else }}
+    {{- with $p.Summary | plainify | truncate 110 }}<span class="sym-tile__text">{{ . }}</span>{{ end }}
+    {{- end }}
+  </a>
+  {{- end }}
+</div>
+{{- end }}

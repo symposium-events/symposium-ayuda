@@ -1,0 +1,45 @@
+/* Symposium design tokens, taken from https://symposium.events (logo mosaic,
+   WordPress child theme and section gradients). */
+:root {
+  /* Brand */
+  --sym-orange: #f86a00;
+  --sym-flame: #ff4301;
+  --sym-magenta: #d0005b;
+  --sym-violet: #4d13bc;
+  --sym-blue: #0f97d6;
+  --sym-ink: #343a40;
+  --sym-gold: #fdc830;
+  --sym-sunset: #f37335;
+  --sym-gradient: linear-gradient(90deg, var(--sym-sunset) 0%, var(--sym-gold) 100%);
+  --sym-gradient-brand: linear-gradient(120deg, var(--sym-violet) 0%, var(--sym-magenta) 45%, var(--sym-flame) 75%, var(--sym-orange) 100%);
+
+  /* Mosaic tints (logo squares) */
+  --sym-tint-peach: #fdc49a;
+  --sym-tint-sky: #cce4ff;
+  --sym-tint-steel: #dde4e8;
+  --sym-tint-rose: #ecdbe3;
+  --sym-tint-lilac: #d0c0ed;
+
+  /* Surfaces */
+  --sym-bg: #ffffff;
+  --sym-surface: #f8f9fa;
+  --sym-border: #e5e7eb;
+  --sym-text: #343a40;
+  --sym-muted: #6b7280;
+
+  /* Type */
+  --sym-font-heading: "Ubuntu", "Open Sans", system-ui, sans-serif;
+  --sym-font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --sym-radius: 10px;
+  --sym-shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 6px 20px rgba(52, 58, 64, .08);
+}
+
+.dark {
+  --sym-bg: #111214;
+  --sym-surface: #1a1c1f;
+  --sym-border: #2b2e33;
+  --sym-text: #e5e7eb;
+  --sym-muted: #9ca3af;
+  --sym-shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 6px 20px rgba(0, 0, 0, .35);
+}

@@ -1,0 +1,40 @@
+{{- /* hextra's image hook plus DokuWiki-style sizing: the converter writes
+       ![alt](/media/ns/file.png?w=250&align=center). `w` sets the width,
+       `align=center` centres the image; the query never reaches the URL. */ -}}
+{{- $alt := .PlainText | safeHTML -}}
+{{- $lazyLoading := .Page.Site.Params.enableImageLazyLoading | default true -}}
+{{- $enableImageZoom := .Page.Site.Params.imageZoom.enable | default false -}}
+{{- if not (eq .Page.Params.imageZoom nil) -}}
+  {{- $enableImageZoom = .Page.Params.imageZoom -}}
+{{- end -}}
+{{- $url := urls.Parse .Destination -}}
+{{- $q := $url.Query -}}
+{{- $width := $q.Get "w" -}}
+{{- $center := eq ($q.Get "align") "center" -}}
+{{- $dest := $url.Path -}}
+{{- if $url.Scheme -}}
+  {{- $dest = .Destination -}}
+{{- else if hasPrefix $dest "/" -}}
+  {{- with or (.PageInner.Resources.Get $dest) (resources.Get $dest) -}}
+    {{- $dest = .RelPermalink -}}
+  {{- else -}}
+    {{- $dest = relURL (strings.TrimPrefix "/" $dest) -}}
+  {{- end -}}
+{{- else -}}
+  {{- with .PageInner.Resources.Get (strings.TrimPrefix "./" $dest) -}}
+    {{- $dest = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- if $enableImageZoom -}}
+  {{- .Page.Store.Set "hasImageZoom" true -}}
+{{- end -}}
+{{- $img := printf `<img src="%s" alt="%s"%s%s%s%s />` $dest $alt
+    (cond (ne $width "") (printf ` width="%s"` $width) "")
+    (cond $center ` class="sym-center"` "")
+    (cond $enableImageZoom ` data-zoomable` "")
+    (cond $lazyLoading ` loading="lazy"` "") -}}
+{{- with .Title -}}
+  <figure>{{ $img | safeHTML }}<figcaption>{{ . }}</figcaption></figure>
+{{- else -}}
+  {{- $img | safeHTML -}}
+{{- end -}}

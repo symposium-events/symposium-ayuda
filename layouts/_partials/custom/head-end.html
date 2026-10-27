@@ -1,0 +1,12 @@
+{{- /* Symposium design system: fonts + tokens + components, one bundle.
+       Output path css/symposium.css keeps the relative ../fonts/ URLs valid
+       under any base path. */ -}}
+<link rel="preload" href="{{ "fonts/open-sans-300-800-normal-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="{{ "fonts/ubuntu-500-normal-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin />
+{{- $css := resources.Match "css/symposium/*.css" | resources.Concat "css/symposium.css" -}}
+{{- if hugo.IsProduction -}}
+  {{- $css = $css | minify | fingerprint -}}
+{{- end }}
+<link href="{{ $css.RelPermalink }}" rel="stylesheet"{{ with $css.Data.Integrity }} integrity="{{ . }}"{{ end }} />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)" />

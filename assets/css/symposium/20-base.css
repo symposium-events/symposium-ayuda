@@ -1,0 +1,57 @@
+/* Typography and base elements on top of hextra. */
+body {
+  font-family: var(--sym-font-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+.hextra-card p:first-child,
+.sym-hero__title {
+  font-family: var(--sym-font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Brand strip under the navbar: the logo gradient. */
+.hextra-nav-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: var(--sym-gradient-brand);
+  pointer-events: none;
+}
+
+/* Docs content */
+.content h1 { font-weight: 700; }
+.content h2 { font-weight: 500; }
+.content h2::before {
+  content: "";
+  display: inline-block;
+  width: .55em;
+  height: .55em;
+  margin-right: .5em;
+  transform: rotate(45deg) translateY(-.12em);
+  background: var(--sym-orange);
+}
+
+.content img {
+  border-radius: 6px;
+  border: 1px solid var(--sym-border);
+  box-shadow: var(--sym-shadow);
+}
+.content img.sym-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tables imported without a header row get an empty <thead>: hide it. */
+.content table thead:not(:has(th:not(:empty))) { display: none; }
+.content table { font-size: .925em; }
+.content table td img { box-shadow: none; }
+
+/* Sidebar: active item in brand orange */
+.hextra-sidebar-container a.sidebar-active-item {
+  border-left: 3px solid var(--sym-orange);
+}
