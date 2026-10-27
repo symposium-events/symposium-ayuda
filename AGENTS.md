@@ -125,6 +125,11 @@ Overrides on top of hextra:
 
 Every URL must work under a sub-path: use `relURL`, `relLangURL`, `.RelPermalink`.
 
+**hextra ships precompiled CSS**: only the `hx:` utility classes that hextra's own templates use exist
+(e.g. `hx:flex`, `hx:hidden`, `hx:dark:block`, `hx:py-12`; *not* `hx:py-10`, `hx:gap-6`, `hx:md:flex-row`).
+A missing utility silently does nothing. In our templates, style layout with `sym-*` classes in
+`assets/css/symposium/30-components.css` instead of new `hx:` utilities.
+
 ## The DokuWiki import
 
 `scripts/dokuwiki2hugo.py` converted the wiki export at
